@@ -1,0 +1,103 @@
+<div>
+  <h1> {{name}} </h1>
+  <p> <strong> birthdate: </strong> {{birthdate}} </p>
+  <p> <strong> birthplace:</strong> {{birthplace}} </p>
+  <p> <strong> deathdate: </strong> {{deathdate}} </p>
+  <p> <strong> deathplace: </strong> {{deathplace}} </p>
+  <p> <strong> nationality: </strong> {{nationality}} </p>
+  <hr />
+  <p> <strong> occupation: </strong> {{occupation}} </p>
+  <p>
+    <ul>
+      {{#each known_for}} <li> {{this}} </li> {{/each}}
+    </ul>
+  </p>
+  <p>
+    <hr />
+    <strong> education: </strong>
+    <br />
+    <br />
+    {{#each education}}
+      <div> degree: {{degree}} </div>
+      <div> field: {{field}} </div>
+      <div> institution: {{institution}} </div>
+      <div> year: {{year}} </div>
+    {{/each}}
+  </p>
+  <hr />
+  <p>
+    <strong> notable_publications: </strong>
+    <ul>
+      {{#each notable_publications}}
+        <li>
+          title:{{title}}
+          - year:{{year}}
+          - publisher:{{publisher}}</li>
+      {{/each}}
+    </ul>
+  </p>
+  <hr />
+  <p>
+    <strong> partners: </strong>
+    <ul>
+      {{#each partners}}
+        <li>
+          name:
+          {{name}}
+          ; relationship:
+          {{relationship}}
+          ; years:
+          {{years}}
+        </li>
+      {{/each}}</ul>
+  </p>
+  <hr />
+  <p>
+    <strong> awards: </strong>
+    {{#each awards}}
+      <div> title: {{title}} </div>
+      <div> year: {{year}} </div>
+      <div> description: {{description}} </div>
+    {{/each}}
+  </p>
+  <hr />
+  <p>
+    <strong> influences: </strong>
+    <ul>
+      {{#each influences}} <li> {{this}} </li>{{/each}}
+    </ul>
+  </p>
+  <hr />
+  <p>
+    <strong> influenced: </strong>
+    <ul>
+      {{#each influenced}} <li> {{this}} </li>{{/each}}
+    </ul>
+  </p>
+  <hr />
+  <p>
+    <strong> quotes: </strong>
+    <ul>
+      {{#each quotes}} <li> {{this}} </li>{{/each}}
+    </ul>
+  </p>
+  <hr />
+  <p>
+    <strong> major_discoveries: </strong>
+    {{#each major_discoveries}}
+      <div> titie: {{title}} </div>
+      <div> year: {{year}} </div>
+      <div> description: {{description}} </div>
+    {{/each}}
+  </p>
+  <hr />
+  <p>
+    <strong> contributions: </strong>
+    {{#with contributions}}
+      <p> title: {{title}} </p>
+      <p> description: {{description}} </p>
+      <p> year: {{year}} </p>
+      <p> field: {{field}} </p>
+    {{/with}}
+  </p>
+</div>
