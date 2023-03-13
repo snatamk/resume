@@ -3,40 +3,34 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
- 
-    
-   
-{{#with main}}
-  <main>
-    {{#with summary}}
-    <section>
-        {{> title big=true data=title}}
-       <div>
-          <p>
-            {{text}}
-          </p>
-       </div>
-    </section>
-    {{/with}}
-
-    {{#with experience}}
-        <section>
-          <div>
-            {{>title big=false data=title}}
-          </div>
-          <div>
+<div>  
+  {{#with main}}
+    <main>
+      {{#with summary}}
+      <section>
+          {{> title big=true data=title}}
+        <div>
             <p>
               {{text}}
             </p>
-          </div>
-        </section>
+        </div>
+      </section>
+      {{/with}}
+
+      {{#with experience}}
+          <section>
+            <div>
+              {{>title big=false data=title}}
+            </div>
+            <div>
+              <p>
+                {{text}}
+              </p>
+            </div>
+          </section>
+      {{/with}}
+    </main>
     {{/with}}
-  </main>
-  {{/with}}
-
- 
-
 </div>
 
 {{!-- 
