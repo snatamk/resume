@@ -30,18 +30,18 @@
                   <br />
                   <br />
                   location:{{#with location}}
-                    {{address}}-{{city}}-{{country}}
+                    {{address}}--{{city}}--{{country}}
                   {{/with}}
                   <br /><br />
                   exhibits:
                   <ul>{{#each exhibits}}
                       <li>
-                        name:{{name}}
+                        name:{{name}}--
                         {{#if artist}}
-                          artist:{{artist}}
+                          artist:{{artist}}--
                         {{/if}}
                         description:
-                        {{description}}
+                        {{description}}--
                         {{#if audio_guide}}
                           audio_guide
                           <small> ({{audio_guide}})</small>
@@ -57,12 +57,12 @@
                   <br /><br />
                   location:
                   {{#with location}}
-                    {{address}}-{{city}}-{{country}}
+                    {{address}}--{{city}}--{{country}}
                   {{/with}}
                   <br /><br />
-                  performers:
                 {{/with}}
 
+                {{#if performers}} performers: {{/if}}
                 <ul>{{#each performers}}
                     <li> {{name}} {{type}}</li>
                   {{/each}}</ul>
