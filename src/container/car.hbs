@@ -1,0 +1,134 @@
+<header>
+  <h1 class='text-center text-silver'>
+    {{make}}
+  </h1></header>
+
+<main>
+  <div>
+    <h2 class='text-center text-secondary'>
+      {{model}} - {{year}} - {{color}}
+    </h2>
+    <hr />
+    <hr />
+   <h4>
+      <p class='text-center'> <b> features </b> </p>
+      {{#with features}}
+
+        <p> <mark> interior </mark> </p>
+        {{#with interior}}
+           {{#with seats}}
+            <p>
+              <i class='text-secondary'> seats: </i>
+              {{material}} - {{color}} -
+              {{#if heated}} heated {{/if}} -
+              {{#if ventilated}} ventilated {{/if}}
+            </p>
+          {{/with}}
+
+          {{#with dashboard}}
+            <p>
+              <i class='text-secondary'> dashboard:</i>
+              {{material}} - {{color}}
+              - display( <small>
+                {{#with display}}
+                  {{type}} -- {{size}} -- {{resolution}} --
+                  {{#if touchscreen}} touchscreen {{/if}}
+                {{/with}}
+              </small>)
+            </p>
+          {{/with}}
+
+          {{#with audio}}
+            <p>
+              <i class='text-secondary'> audio: </i>
+              {{system}} - {{speakers}} -
+              {{#if subwoofer}} subwoofer{{/if}} -
+              {{#if bluetooth}} bluetooth {{/if}} -
+              {{#if USB}} USB {{/if}}
+            </p>
+          {{/with}}
+        {{/with}}
+        <hr />
+
+        <p> <mark> exterior </mark> </p>
+        {{#with exterior}}
+          {{#with wheels}}
+            <p>
+              <i class='text-secondary'> wheels: </i>
+              {{size}} - {{type}} - {{color}}
+            </p>
+          {{/with}}
+
+          {{#with headlights}}
+            <p>
+              <i class='text-secondary'> headlights: </i>
+              {{type}} - {{brightness}} - {{automatic}}
+            </p>
+          {{/with}}
+
+          {{#with sunroof}}
+            <p>
+              <i class='text-secondary'> sunroof: </i>
+              {{type}} - {{size}} -
+              {{#if automatic}} automatic {{/if}}
+            </p>
+          {{/with}}
+        {{/with}}
+        <hr />
+
+        <p> <mark> safety </makr></p>
+        {{#with safety}}
+          {{#with airbags}}
+            <p>
+              <i class='text-secondary'> airbags: </i>
+              front({{front}}) - side({{side}}) - knee({{knee}})
+              - rear({{rear}})
+            </p>
+          {{/with}}
+          
+          {{#with assistance}}
+            <p>
+              <i class='text-secondary'> assistance: </i>
+              {{#if blind_spot_monitoring}} blind_spot_monitoring {{/if}} -
+              {{#if rear_cross_traffic_alert}} rear_cross_traffic_alert {{/if}} -
+              {{#if lane_departure_warning}} lane_departure_warning {{/if}} -
+              {{#if adaptive_cruise_control}} adaptive_cruise_control {{/if}} -
+              {{#if collision_warning}} collision_warning {{/if}}
+            </p>
+          {{/with}}
+        {{/with}}
+      {{/with}}<hr> <hr>
+
+       <p class='text-center'> <b> engine </b> </p>
+       {{#with engine}}
+       <p> 
+        (<i class='text-secondary'> type: </i> {{type}}) - (<i class='text-secondary'> displacement: </i> {{displacement}}) - 
+        (<i class='text-secondary'> horsepower: </i> {{horsepower}}) - (<i class='text-secondary'> torque: </i> {{torque}}) - 
+        (<i class='text-secondary'> transmission: </i> [{{#with transmission}} type: {{type}} gears: {{gears}}] {{/with}})
+       </p>
+       {{/with}}<hr> <hr>
+       
+       <p class='text-center'> <b> fuel_economy </b> </p>
+       {{#with fuel_economy }}
+       <p> 
+        (<i class='text-secondary'> city: </i> {{city}}) - 
+        (<i class='text-secondary'> highway: </i> {{highway}}) - 
+        (<i class='text-secondary'> combined: </i> {{combined}})
+       </p>
+       {{/with}}<hr> <hr>
+
+       <p class='text-center'> <b> price </b> </p>
+       {{#with price }}
+       <p>
+        (<i class='text-secondary'> base: </i> {{base}}) - 
+        (<i class='text-secondary'> destination: </i> {{destination}}) - 
+        (<i class='text-secondary'> options: </i> [{{#with options}} navigation: {{navigation}} -- moonroof: {{moonroof}} -- premium_paint:{{premium_paint}} {{/with}}]) - 
+        (<i class='text-secondary'> total: </i> {{total}})
+       </p>
+       {{/with}}
+
+
+    </h4> 
+
+  </div>
+</main>
