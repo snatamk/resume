@@ -1,0 +1,24 @@
+<div class='card text-bg-dark'>
+  <div class='card-header'>
+    <div>
+      {{title}}
+    </div>
+    {{#unless isTop}}
+      <span
+        class='badge btn btn-danger rounded-pill btn-sm text-capitalize'
+      >
+        {{isTop}}
+      </span>
+    {{/unless}}
+    {{#if idNew includeZero=true}}
+      <span
+        class='badge btn btn-success rounded-pill btn-sm text-capitalize'
+      >
+        {{idNew}}
+      </span>
+    {{/if}}
+  </div>
+  <ul class='card-body'>
+    <p> {{description}} </p>
+  </ul>
+</div>

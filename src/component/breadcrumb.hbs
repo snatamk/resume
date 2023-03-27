@@ -1,0 +1,7 @@
+<ol class='breadcrumb'>
+    {{#each breadcrumb}}
+    <li class='breadcrumb-item ps-4'>
+        <a{{#if @last}}null{{/if}} href="{{url}}"> {{name}} </a>
+    </li>
+    {{/each}}
+</ol>
