@@ -1,15 +1,9 @@
-<div class='row'>
+
  {{> shopheader}}
 
   <section>
     <div class='col-8'>
-      <ol class='breadcrumb'>
-        {{#each breadcrumb}}
-          <li class='breadcrumb-item ps-4'>
-            <a{{#if @last}}null{{/if}} href="{{url}}"> {{name}} </a>
-          </li>
-        {{/each}}
-      </ol>
+      {{> breadcrumb}}
     </div>
   </section>
 
@@ -117,7 +111,7 @@
 <hr class="my-4">
 
 {{> shopfooter}}
-</div>
+
 
 
               

@@ -9,28 +9,7 @@
       <div class='row'>
         {{#each cards}}
           <div class='col-3 pb-3'>
-            <div class='card text-bg-dark'>
-              <div class='card-header'>
-                <div> {{title}} </div>
-                {{#if isTop includeZero=true}}
-                  <span
-                    class='badge btn btn-danger rounded-pill btn-sm text-capitalize'
-                  >
-                    {{isTop}}
-                  </span>
-                {{/if}}
-                {{#if isNew includeZero=true}}
-                  <span
-                    class='badge btn btn-success rounded-pill btn-sm text-capitalize'
-                  >
-                    {{isNew}}
-                  </span>
-                {{/if}}
-              </div>
-              <ul class='card-body'>
-                <p> {{description}} </p>
-              </ul>
-            </div>
+           {{> shoppost}}
           </div>
         {{/each}}
       </div>
