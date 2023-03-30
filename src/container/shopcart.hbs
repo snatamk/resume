@@ -1,0 +1,99 @@
+<main>
+  <nav>
+    <hr />
+    {{#with navigation}}
+      <div class='nav'>
+        <div class='col-5'>
+          <h1> {{Logo}} </h1>
+        </div>
+        <p class='ps-5'>
+          {{#each links}}
+            <p class='nav-item'>
+              <a href='{{href}}' target='_blank' class='nav-link'>
+                {{text}}
+              </a>
+            </p>
+          {{/each}}
+          <a href='#' class='nav-link disabled pe-2'>
+            Disabled
+          </a>
+        </p>
+      </div>
+    {{/with}}
+  </nav>
+  <header class='row mt-5'>
+    {{#with header}}
+      <div class='col-6'>
+        <p class='display-5'> <b> <strong> {{title}} </strong> </b> </p>
+      </div>
+      <div class='col-6 text-end mt-2'>
+        {{#with button}}
+          <a href='{{link}}' class='btn btn-outline-secondary'>{{text}}</a>
+        {{/with}}
+      </div>
+    {{/with}}
+  </header>
+  <hr class='my-4' />
+  <article>
+    {{#each goodsBlock}}
+     {{> cartGoodsltem}}
+    {{/each}}
+  </article>
+  <hr class='my-4' />
+  <section>
+    {{#with total}}
+      <div class='row'>
+        <div class='col-8'>
+          <h4>{{title}}</h4>
+          <h2>{{amount}}</h2>
+          <p>{{delivery}}</p>
+        </div>
+        <div class='col-4'>
+          {{#each buttons}}
+            {{#if isSuccess}} <a href='{{link}}' class='btn btn-success'>
+                    {{text}} </a>
+            {{/if}}
+            {{#if isOutline}} <a href='{{link}}' 
+               class='btn btn-outline-success mt-3'> {{text}} </a>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    {{/with}}
+  </section>
+  <hr class='my-4' />
+  <section>
+    {{#with goodsOtherBlock}}
+      <h3 class='text-center'> {{title}} </h3>
+     <div class="row">
+        {{#each cards}}
+          <div class="col-4 mt-3">
+            {{> shopcard}}
+          </div>
+        {{/each}}
+     </div>
+    {{/with}}
+  </section>
+    <hr class='my-4' />
+    <section>
+    {{#with subscribe}}
+      <div class="card alert text-bg-dark">
+        <div class="row">
+          <div class="col-6">
+              <h2 class="me-2"> {{header}} </h2>
+              <p> {{description}} </p>
+          </div>
+            
+          <div class="col-6 text-end">
+            {{#each buttons}}
+            <a href="{{link}}" target="_blank" class="text-end 
+            btn btn-primary mt-5"> {{text}} </a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    {{/with}}
+</section>
+<hr class="my-4">
+{{> shopfooter}}
+</main>
