@@ -8,11 +8,7 @@
       <p class='ps-5'>
         {{#each links}}
           <p class='nav-item'>
-            <a
-              href='{{href}}'
-              target='_blank'
-              class='nav-link'
-            >
+            <a href='{{href}}' target='_blank' class='nav-link'>
               {{text}}
             </a>
           </p>
@@ -101,44 +97,7 @@
 
     <div class='col-12'>
       {{#each itemList}}
-        <div class='row'>
-          <table class='table'>
-            <tbody>
-              <tr>
-                <div class='col-4'>
-                  <span> <small> {{number}} </small> </span>
-                  <h6 class='my-2'> {{status}} </h6>
-                </div>
-
-                <div class='col-2'>
-                  {{amount.title}}:
-                  <h6> {{amount.value}} </h6>
-                </div>
-
-                <div class='col-4'>
-                  <div class='row'>
-                    {{#each images}}
-                      <div class='col-4'>
-                        <img class='card-img-top' src='{{this}}'/>
-                      </div>
-                    {{/each}}
-                  </div>
-                </div>
-
-                <div class='col-2'>
-                  {{#with button}}
-                    {{#if isPrimary}}
-                      <a href='{{link}}'class='btn btn-primary'>
-                        {{text}}
-                      </a>
-                    {{/if}}
-                  {{/with}}
-                </div>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <hr />
+       {{> purchaseltem}}
       {{/each}}
     </div>
   {{/with}}
@@ -199,8 +158,8 @@
 
                 <div class='col-4'>
                   {{#if isSecondary}}
-                    <a href='{{link}}'class='btn btn-outline-secondary'
-                    > {{text}} </a>
+                    <a href='{{link}}'class='btn btn-outline-secondary'>
+                       {{text}} </a>
                   {{/if}}
                 </div>
                 <div class='col-4'>
