@@ -1,0 +1,251 @@
+<nav>
+  <hr />
+  {{#with navigation}}
+    <div class='nav'>
+      <div class='col-5'>
+        <h1> {{Logo}} </h1>
+      </div>
+      <p class='ps-5'>
+        {{#each links}}
+          <p class='nav-item'>
+            <a href='{{href}}' target='_blank' class='nav-link'>
+              {{text}}
+            </a>
+          </p>
+        {{/each}}
+        <a href='#' class='nav-link disabled pe-2'>
+          Disabled
+        </a>
+      </p>
+    </div>
+  {{/with}}
+</nav>
+<header>
+  <p class='display-5 mt-4'> <b> {{header}} </b> </p>
+
+  {{#with purchase}}
+
+    <div class='nav nav-tabs'>
+      {{#each tabs}}
+        {{#if @ first}} <a href='#' class='nav-link active'> {{this}} </a>
+         {{else}} <a href='#' class='nav-link'> {{this}} </a> {{/if}}
+      {{/each}}
+    </div>
+
+    {{#with actionBlock}}
+      <div class='row my-3 me-5'>
+
+        {{#with input}}
+          <div class='col-4'>
+            <input
+              placeholder='{{placeholder}}'
+              class='form-control'
+            />
+          </div>
+        {{/with}}
+
+        {{#each buttons}}
+          {{#if @first}}
+            <div class='col-2'>
+
+              {{#if isSuccess}}
+                <a href='{{link}}' class='btn btn-success'>
+                  {{text}}
+                </a>
+              {{/if}}
+
+              {{#if isOutline}}
+                <a href='{{link}}' class='btn btn-outline-success'>
+                  {{text}}
+                </a>
+              {{/if}}
+
+              {{#if isDanger}}
+                <a href='{{link}}' class='btn btn-outline-danger'>
+                  {{text}}
+                </a>
+              {{/if}}
+            </div>
+
+          {{else}}
+
+            <div class='col-3'>
+              {{#if isSuccess}}
+                <a href='{{link}}' class='btn btn-success'>
+                  {{text}}
+                </a>
+              {{/if}}
+
+              {{#if isOutline}}
+                <a href='{{link}}' class='btn btn-outline-success'>
+                  {{text}}
+                </a>
+              {{/if}}
+
+              {{#if isDanger}}
+                <a href='{{link}}' class='btn btn-outline-danger'>
+                  {{text}}
+                </a>
+              {{/if}}
+            </div>
+          {{/if}}
+        {{/each}}
+      </div>
+    {{/with}}
+
+    <hr class='mt-4' />
+
+    <div class='col-12'>
+      {{#each itemList}}
+       {{> purchaseltem}}
+      {{/each}}
+    </div>
+  {{/with}}
+</header>
+
+<hr class='mt-4' />
+
+<main>
+  <h3> {{title}} </h3>
+  <div class='col-12'>
+    {{#with userInfo}}
+      <h2> {{title}} </h2>
+
+      <div class='card my-2'>
+        <div class='card-body'>
+          {{#with profileData}}
+            <h4 class='pb-3'> {{title}} </h4>
+            <div class='row'>
+              {{#with fullName}}
+                <div class='col-4'>
+                  <span> {{surname.title}} </span>
+                  <h6> {{surname.value}} </h6>
+                </div>
+                <div class='col-4'>
+                  <span> {{name.title}} </span>
+                  <h6> {{name.value}} </h6>
+                </div>
+                <div class='col-4'>
+                  <span> {{middleName.title}} </span>
+                  <h6> {{middleName.value}} </h6>
+                </div>
+              {{/with}}
+            </div>
+
+            <div class='row my-3'>
+              {{#with otherInfo}}
+                <div class='col-4'>
+                  <span> {{birthday.title}} </span>
+                  <h6> {{birthday.value}} </h6>
+                </div>
+                <div class='col-4'>
+                  <span> {{sex.title}} </span>
+                  <h6> {{sex.value}} </h6>
+                </div>
+                <div class='col-4'>
+                  <span> {{language.title}} </span>
+                  <h6> {{language.value}} </h6>
+                </div>
+              {{/with}}
+            </div>
+          {{/with}}
+          <div class='row'>
+            {{#each buttons}}
+              <div class='col-4'>
+                {{#if isPrimary}}
+                  <a href='{{link}}'class='btn btn-primary'> {{text}} </a>
+                {{/if}}
+
+                <div class='col-4'>
+                  {{#if isSecondary}}
+                    <a href='{{link}}'class='btn btn-outline-secondary'>
+                       {{text}} </a>
+                  {{/if}}
+                </div>
+                <div class='col-4'>
+                  {{#if isDanger}}
+                    <a href='{{link}}'class='btn btn-outline-danger'> {{text}} </a>
+                  {{/if}}
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+      <div class='card my-3'>
+        <div class='card-body'>
+          {{#with recipients}}
+            <h4 class='pb-3'> {{title}} </h4>
+            <div class='row'>
+              {{#each users}}
+
+                <div class='col-4'>
+                  <h6> {{name}} </h6>
+                  <span> {{phone}} </span>
+
+                  <div class='col-4 my-3'>
+                    {{#with button}}
+                      <a href='{{link}}'class='btn btn-primary'>
+                        {{text}}
+                      </a>
+                    {{/with}}
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          {{/with}}
+        </div>
+      </div>
+
+      <div class='card'>
+        <div class='carb-body'>
+          {{#with contacts}}
+            <h4 class='pb-3'> {{title}} </h4>
+            <div class='row'>
+              {{#with contactData}}
+                <div class='col-4'>
+                  <span> {{phone.title}} </span>
+                  <h6> {{phone.value}} </h6>
+                </div>
+                <div class='col-4'>
+                  <span> {{additionalPhone.title}} </span>
+                  <h6> {{additionalPhone.value}} </h6>
+                </div>
+                <div class='col-4'>
+                  <span> {{email.title}} </span>
+                  <h6> {{email.value}} </h6>
+                </div>
+              {{/with}}
+              <div class='row my-3'>
+                {{#each buttons}}
+                  <div class='col-4'>
+                    {{#if isPrimary}}
+                      <a href='{{link}}'class='btn btn-primary'>
+                        {{text}}
+                      </a>{{/if}}
+
+                    <div class='col-4'>
+                      {{#if isSecondary}}
+                        <a href='{{link}}'class='btn btn-outline-secondary'>
+                          {{text}}
+                        </a>{{/if}}
+                    </div>
+                    <div class='col-4'>
+                      {{#if isDanger}}
+                        <a href='{{link}}'class='btn btn-outline-danger'>
+                          {{text}}
+                        </a>{{/if}}
+                    </div>
+                  </div>
+                {{/each}}
+              </div>
+            </div>
+          {{/with}}
+        </div>
+      </div>
+    {{/with}}
+  </div>
+</main>
+<hr class='mt-4' />
+{{> shopfooter}}
