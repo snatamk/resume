@@ -1,0 +1,26 @@
+<nav>
+  <hr />
+  {{#with navigation}}
+    <div class='nav'>
+      <div class='col-5'>
+        <h1> {{Logo}} </h1>
+      </div>
+      <p class='ps-5'>
+        {{#each links}}
+          <p class='nav-item'>
+            <a
+              href='{{href}}'
+              target='_blank'
+              class='nav-link'
+            >
+              {{text}}
+            </a>
+          </p>
+        {{/each}}
+        <a href='#' class='nav-link disabled pe-2'>
+          Disabled
+        </a>
+      </p>
+    </div>
+  {{/with}}
+</nav>
