@@ -114,12 +114,7 @@
                       {{#each select}}
                           <div class="col-6">
                             <label  class="form-label m-0"><small>{{label}}</small></label>
-                            <select class="form-select form-select-sm">
-                            <option> {{placeholder}} </option>
-                              {{#each options}}
-                              <option  value="{{value}}">{{text}}</option>
-                              {{/each}}                           
-                            </select>
+                          {{> placeholder}}
                         </div>  
                       {{/each}}
                     </div>
