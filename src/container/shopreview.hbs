@@ -1,0 +1,120 @@
+<nav>
+  <hr />
+  {{#with navigation}}
+    <div class='nav'>
+      <div class='col-5'>
+        <h1> {{Logo}} </h1>
+      </div>
+      <p class='ps-5'>
+        {{#each links}}
+          <p class='nav-item'>
+            <a href='{{href}}' target='_blank' class='nav-link'>
+              {{text}}
+            </a>
+          </p>
+        {{/each}}
+        <a href='#' class='nav-link disabled pe-2'>
+          Disabled
+        </a>
+      </p>
+    </div>
+  {{/with}}
+</nav>
+<header>
+  <div class='row'>
+    {{#with formBlock}}
+      <div class='col-8'>
+        <h2 class='mt-3'> {{header}} </h2>
+        {{#with rating}}
+          <span> {{title}}: {{value}} </span>
+        {{/with}}
+        {{#with actionBlock}}
+          <div class='nav nav-tabs'>
+            {{#each tabs}}
+              {{#if @last}} <a href='#' class='nav-link active'> {{text}} </a>
+              {{else}} <a href='#' class='nav-link'> {{text}} </a>
+              {{/if}}
+            {{/each}}
+          </div>
+          <hr class='my-4' />
+          <div class='card'>
+            <div class='card-body'>
+              <div class='row'>
+                {{#with field}}
+                  <div class='col-7'>
+                    <span> {{placeholder}} </span>
+                  </div>
+                  {{#with button}}
+                    <div class='col-5'>
+                      <a href='{{link}}' class='btn btn-secondary'> {{text}}</a>
+                    </div>
+                  {{/with}}
+                {{/with}}
+              </div>
+            </div>
+          </div>
+        {{/with}}
+        <hr class='my-4' />
+        {{#with feedbackBlock}}
+          <h4> {{title}} </h4>
+          <div class='row my-4'>
+            {{#each buttons}}
+              <div class='col-4'>
+                {{#if isWarning}}
+                  <a href='{{link}}'class='btn btn-Warning text-light'> 
+                    {{text}} </a>
+                {{/if}}
+                <div class='col-4'>
+                  {{#if isSuccess}}
+                    <a href='{{link}}'class='btn btn-success px-4'> 
+                      <small> {{text}} </small> </a>
+                  {{/if}}
+                </div>
+                <div class='col-4'>
+                  {{#if isDanger}}
+                    <a href='{{link}}'class='btn btn-danger px-4'>
+                      <small> {{text}} </small> </a>
+                  {{/if}}
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        {{/with}}
+      </div>
+      {{#with goodsInfo}}
+        <div class='col-4'>
+          <div class='card'>
+            <img class='card-img-top'src='{{photo}}' alt='{{name}}'/>
+            <div class='card-body'> <h6> {{name}} </h6> </div>
+          </div>
+          <div class='card mt-2'>
+            <div class='card-body'>
+              <h6> {{price}} </h6>
+              {{#each buttons}}
+                {{#if isPrimary}}
+                  <a href='{{link}}' class='btn btn-primary'> {{text}} </a>
+                {{/if}}
+                {{#if isSecondary}}
+                  <a href='{{link}}'class='btn btn-secondary mt-2'>{{text}}</a>
+                {{/if}}
+              {{/each}}
+            </div>
+          </div>
+          <div class='card'>
+            <div class='card-body'>
+              {{#with seller}}
+                <span> {{title}}: <b>{{value}}</b></span>
+              {{/with}}
+            </div>
+          </div>
+        </div>
+      {{/with}}
+    {{/with}}
+  </div>
+</header>
+<hr class='my-4' />
+{{> reviewltem}}
+{{> shopaction}}
+{{> shopfooter}}
+
+

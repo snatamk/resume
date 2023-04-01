@@ -1,0 +1,69 @@
+ <main>
+  {{#each reviewList}}
+ <div class='card my-5'>
+      <div class='card-body'>
+        {{#with this}}
+            <div class='list-group'>
+              <div class='list-group-item'>
+               <div class="row">
+                  {{#with title}}
+                      <div class="col-6">
+                          <h6> {{userName}} </h6>
+                          <span> {{caption}} </span>
+                      </div>
+                      <div class="col-6 pt-2">
+                        <p class='text-end'> {{date}} </p>
+                      </div>
+                  {{/with}}
+               </div>
+             </div>
+            {{#with reviewBody}}
+              <div class="list-group-item">
+                {{#with seller}} <p> {{title}}: {{value}}</p> {{/with}}
+                {{#with rating}} <span > {{title}}: {{value}}</span> {{/with}}
+                  {{#each text}} {{this}} {{/each}}
+                   {{#with advantages}}
+                    <b> <p class="m-0 pt-3"> {{title}} </p> </b>
+                    <span> {{text}} </span>
+                   {{/with}}
+                   {{#with disadvantages}}
+                     <b> <p class="m-0 pt-3"> {{title}} </p> </b>
+                     <span> {{text}} </span>
+                   {{/with}}
+                  <div class="col-4">
+                    <div class="row mt-3">
+                       {{#each images}}
+                          <div class="col-4">
+                            <img class="card-img-top" src="{{this}}">
+                          </div>
+                       {{/each}}
+                    </div>
+                  </div>
+                </div>                 
+                <div class="row ps-5">
+                   <div class="col-12 pt-2">
+                        {{#each coments}}
+                            <div class="card mb-2">
+                              <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                      <h6> {{userName}} </h6>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                      <span> {{date}}</span>
+                                    </div>
+                                </div>
+                                <span> {{text}} </span>
+                              </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+             {{/with}}
+            </div>
+          </div>
+        {{/with}}
+      </div>
+    </div>
+  {{/each}}
+  </main>
