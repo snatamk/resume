@@ -1,0 +1,173 @@
+<h1 class='text-center'><em> {{name}} </em> </h1>
+<h2 class='text-center mt-4'> {{description}} </h2>
+<p class='text-center'>
+  ( price:
+  {{price}}
+  --- category:
+  {{category}})
+</p>
+<div>
+  {{#with features}}
+    <div class='row'>
+      <div class='col-4 ps-5'>
+        <h5 class=''> Processor </h5>
+        {{#with processor}}
+          <p>(<span class='text-secondary'> brand:</span>
+            <i>{{brand}}</i>
+          </p>
+          <p>
+            <span class='text-secondary'> model: </span>
+            <i>{{model}}</i>
+          </p>
+          <p>
+            <span class='text-secondary'> speed: </span>
+            <i>{{speed}}</i>
+          </p>
+          <p>
+            <span class='text-secondary'> cores: </span>
+            <i>{{cores}}</i>
+          </p>
+          <p>
+            <span class='text-secondary'> cache </span>
+            <i>{{cache}}</i>)
+          </p>
+        {{/with}}
+      </div>
+      <div class='col-4'>
+        <h5> Memory </h5>
+        {{#with memory}}
+          <p>(<span class='text-secondary'> type: </span>
+            <i>{{type}}</i>
+            -
+            <span class='text-secondary'> size: </span>
+            <i>{{size}}</i></p>
+          <p>
+            <span class='text-secondary'> speed: </span><i
+            >{{speed}})</i></p>
+        {{/with}}
+        <h5> Storage </h5>
+        {{#with storage}}
+          <p>(<span class='text-secondary'> type: </span>
+            <i> {{type}} </i>
+            -
+            <span class='text-secondary'> size: </span>
+            <i> {{size}} </i>)</p>
+        {{/with}}
+        <h5> Graphics </h5>
+        {{#with graphics}}
+          <p>(<span class='text-secondary'> brand:</span><i>
+              {{brand}}
+            </i></p>
+          <p>
+            <span class='text-secondary'> memory:</span>
+            <i> {{memory}}</i></p>
+          <p>
+            <span class='text-secondary'> model: </span>
+            <i>{{model}}</i>)</p>
+        {{/with}}
+      </div>
+      <div class='col-4'>
+        <h5> Display </h5>
+        {{#with display}}
+          <p>(
+            <span class='text-secondary'> size: </span>
+            <i>{{size}}</i>
+          </p>
+          <p>
+            <span class='text-secondary'>
+              resolution:
+            </span>
+            <i>{{resolution}}</i></p>
+          <p>
+            <span class='text-secondary'> technology:</span>
+            <i>{{technology}}</i></p>
+          <p>
+            <span class='text-secondary'>color_space:</span>
+            <i>{{color_space}}</i></p>
+          <p><span class='text-secondary'>brightness:</span>
+            <i>{{brightness}}</i></p>
+          <p>
+            <span
+              class='text-secondary'
+            >refresh_rate:</span>
+            <i>{{refresh_rate}}</i>)</p>
+        {{/with}}
+      </div>
+    </div>
+    <hr />
+    <div class='row'>
+      <div class='col-6 ps-4'>
+        <h5> Port</h5>
+        <ul>
+          {{#each ports}}
+            <li>
+              <span class='text-secondary'> type: </span>
+              <i> {{type}} </i></li>
+            <li>
+              <span class='text-secondary'> count: </span>
+              <i> {{count}} </i></li>
+            {{#if features}}
+              <b> Features </b>
+              <ul>
+                {{#each features}}
+                  <li> {{this}} </li>
+                {{/each}}
+              </ul>
+            {{/if}}
+            <hr class='col-5' />
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class='col-6'>
+        <h5> Battery </h5>
+        {{#with battery}}
+          <p>(<span class='text-secondary'> type: </span>
+            <i>{{type}}</i>
+          </p>
+          <p><span class='text-secondary'> capacity:</span>
+            <i>{{capacity}} </i>
+          </p>
+          <p>
+            <span class='text-secondary'> life:</span>
+            <i>{{life}}</i>)
+          </p>
+        {{/with}}
+
+        <b> Weight: </b>
+        <span> {{weight}}</span>
+        <p class='mt-3'> <b> Dimension</b></p>
+        {{#with dimensions}}
+          <p>(<span class='text-secondary'>
+              height:
+            </span><i>{{height}}</i></p>
+          <p><span class='text-secondary'> width:</span>
+            <i>{{width}} </i></p>
+          <p>
+            <span class='text-secondary'> depth: </span>
+            <i>{{depth}}</i>)</p>
+        {{/with}}
+      </div>
+    </div>
+    <p class='ps-4'>
+      <b>Operating_system: </b>
+      <span> {{operating_system}} </span></p>
+    <p class='ps-4'> <b> Accessories</b> </p>
+    <ul>
+      <div class='row ps-5'>
+        {{#each accessories}}
+          <div class='col-4'>
+            <li>
+              <p><span class='text-secondary'>name:</span>
+                <small><i>{{name}}</i></small>
+              </p>
+              <p><span class='text-secondary'>price:</span>
+                <small> <i>{{price}}</i> </small>
+              </p>
+            </li>
+          </div>
+        {{/each}}
+      </div>
+    </ul>
+  {{/with}}
+</div>
