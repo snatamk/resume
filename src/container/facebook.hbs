@@ -1,0 +1,140 @@
+<main>
+  <h1 class='text-center'> {{name}} </h1>
+  <p class='ms-5 ps-5'> <b> Users </b> </p>
+  <ul>
+    <div class='row'>
+      {{#each users}}
+        <div class='col-6'>
+          <li>
+            <p>
+              <span class='text-secondary'>id:</span>
+              <i> {{id}} </i></p>
+          </li>
+          <li>
+            <p>
+              <span class='text-secondary'>name:</span>
+              <i> {{name}} </i></p>
+          </li>
+          <li>
+            <p>
+              <span class='text-secondary'> gender:</span>
+              <i> {{gender}} </i></p>
+          </li>
+          <li>
+            <p>
+              <span class='text-secondary'> age:</span>
+              <i> {{age}} </i></p>
+          </li>
+          <p> <b> Friends </b> </p>
+          <ul>
+            {{#each friends}}
+              <li>
+                <p>
+                  <span class='text-secondary'>id:</span>
+                  <i> {{id}} </i></p>
+              </li>
+              <li>
+                <p>
+                  <span class='text-secondary'>name:</span>
+                  <i> {{name}} </i></p>
+              </li>
+              <li>
+                <p>
+                  <span class='text-secondary'>
+                    gender:</span>
+                  <i> {{gender}} </i></p>
+              </li>
+              <li>
+                <p>
+                  <span class='text-secondary'> age:</span>
+                  <i> {{age}} </i></p>
+              </li>
+              <p> <b> Mutual_friends </b> </p>
+              <ul>
+                {{#each mutual_friends}}
+                  <p>
+                    <span class='text-secondary'>id:</span>
+                    <i> {{id}} </i></p>
+                  <p>
+                    <span
+                      class='text-secondary'
+                    >name:</span>
+                    <i> {{name}} </i></p>
+                  <p>
+                    <span class='text-secondary'>
+                      gender:</span>
+                    <i> {{gender}} </i></p>
+                  <p>
+                    <span class='text-secondary'>
+                      age:</span>
+                    <i> {{age}} </i></p>
+                  <hr />
+                {{/each}}
+              </ul>
+            {{/each}}
+          </ul>
+
+          {{#if groups}}
+            <p> <b> Groups </b> </p>
+            <ul>
+              <div class='row'>
+                {{#each groups}}
+                  <div class='col-6'>
+
+                    <li>
+                      <p>
+                        <span
+                          class='text-secondary'
+                        >id:</span>
+                        <i> {{id}} </i></p>
+                    </li>
+                    <li>
+                      <p>
+                        <span
+                          class='text-secondary'
+                        >name:</span>
+                        <i> {{name}} </i></p>
+                    </li>
+                    <li>
+                      <p>
+                        <span class='text-secondary'>
+                          description:</span>
+                        <i> {{description}} </i></p>
+                    </li>
+                    <hr />
+                    <div class='row'>
+                      <p> <b> members </b> </p>
+                      {{#each members}}
+                        <div class='col-6'>
+                          <p>
+                            <span
+                              class='text-secondary'
+                            >id:</span>
+                            <i> {{id}} </i></p>
+                          <p>
+                            <span
+                              class='text-secondary'
+                            >name:</span>
+                            <i> {{name}} </i></p>
+                          <p>
+                            <span class='text-secondary'>
+                              gender:</span>
+                            <i> {{gender}} </i></p>
+                          <p>
+                            <span class='text-secondary'>
+                              age:</span>
+                            <i> {{age}} </i></p>
+                        </div>
+                      {{/each}}
+                      <hr />
+                    </div>
+                  </div>
+                {{/each}}
+              </div>
+            </ul>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </ul>
+</main>
