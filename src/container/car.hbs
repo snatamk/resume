@@ -1,10 +1,11 @@
 <header>
   <h1 class='text-center text-silver'>
     {{make}}
-  </h1></header>
+  </h1>
+</header>
 
 <main>
-  <div>
+  <div class="ms-4">
     <h2 class='text-center text-secondary'>
       {{model}} - {{year}} - {{color}}
     </h2>
@@ -97,7 +98,7 @@
             </p>
           {{/with}}
         {{/with}}
-      {{/with}}<hr> <hr>
+      {{/with}} <hr /> <hr />
 
        <p class='text-center'> <b> engine </b> </p>
        {{#with engine}}
@@ -106,7 +107,7 @@
         (<i class='text-secondary'> horsepower: </i> {{horsepower}}) - (<i class='text-secondary'> torque: </i> {{torque}}) - 
         (<i class='text-secondary'> transmission: </i> [{{#with transmission}} type: {{type}} gears: {{gears}}] {{/with}})
        </p>
-       {{/with}}<hr> <hr>
+       {{/with}} <hr /> <hr />
        
        <p class='text-center'> <b> fuel_economy </b> </p>
        {{#with fuel_economy }}
@@ -115,7 +116,7 @@
         (<i class='text-secondary'> highway: </i> {{highway}}) - 
         (<i class='text-secondary'> combined: </i> {{combined}})
        </p>
-       {{/with}}<hr> <hr>
+       {{/with}} <hr> <hr>
 
        <p class='text-center'> <b> price </b> </p>
        {{#with price }}
@@ -126,9 +127,6 @@
         (<i class='text-secondary'> total: </i> {{total}})
        </p>
        {{/with}}
-
-
     </h4> 
-
   </div>
 </main>

@@ -1,7 +1,7 @@
 <div>
     {{#with main}}
         <main>
-            <section>
+            <article>
                 {{> title big=true data='My educationss'}}
                 <ul>
                 {{#each education}}
@@ -12,8 +12,8 @@
                     </li>
                     {{/each}}
                 </ul>
-            </section>
-            <section>
+            </article>
+            <article>
                 {{> title big=false data='My certificates'}}
                 <ul>
                     {{#each certificates}}
@@ -22,7 +22,7 @@
                         </li>
                     {{/each}}
                 </ul>
-            </section>
+            </article>
         </main>
     {{/with}}
 </div>

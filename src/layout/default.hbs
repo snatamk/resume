@@ -11,29 +11,24 @@
   </title>
   <meta charset='utf-8' />
   <link href='css/index.css' rel='stylesheet' />
+
+
 </head>
 
 <body>
   {{#with header}}
   <header>
-    <div>
       <h1>{{name.firstname}} {{name.lastname}}</h1>
-    </div>
-    <div>
+    <p>
       <b>{{position}}</b>
-    </div>
-    <br />
-    <div>
+    </p>
+    <p>
       <em>{{salary}}</em>
-    </div>
-    <br />
+    </p>
     <address>
-      <div>
         <em>{{address}}</em>
-      </div>
     </address>
-    <br />
-    <hr />
+    <hr>
   </header>
   {{/with}}
 

@@ -63,8 +63,8 @@
 <section>
   <div>
     {{#with winner}}
-      <h2> {{title}} </h2>
-        <br>
+      <h2 class="pb-2"> {{title}} </h2>
+    
       {{#with table}}
           <table class='table'>
 
@@ -98,8 +98,8 @@
 <section>
   <div>
     {{#with gallery}}
-      <h2> {{title}} </h2>
-      <br />
+      <h2 class="pb-3"> {{title}} </h2>
+  
       <div class='row'>
 
         {{#each cards}}
@@ -143,11 +143,11 @@
               </div>
 
               <ul class='card-boby'>
-                <br />
+          
                 <li class='list-group-item '>
-                 <h5>  {{title}} </h5>
+                 <h5 class="my-3">  {{title}} </h5>
                 </li>
-                <br />
+               
                 <li class='list-group-item'>
                   {{description}}
                 </li>
@@ -173,14 +173,14 @@
                 <div> {{header}} </div>
               </div>
               <ul class='card-body'>
-                <li class='list-group-item'>
+                <li class='list-group-item my-2'>
                   <b> {{title}} </b>
                 </li>
-                <br />
-                <li class='list-group-item'>
+             
+                <li class='list-group-item my-2'>
                   {{description}}
                 </li>
-                <br />
+          
                 <button class='btn btn-primary'>
                   {{button}}
                 </button>
@@ -209,10 +209,10 @@
                 <div> {{header}} </div>
               </div>
               <ul class='card-body'>
-                <li class='list-group-item'>
+                <li class='list-group-item my-3'>
                   <b> {{title}} </b>
                 </li>
-                <br />
+           
                 <li class='list-group-item'>
                   {{description}}
                 </li>

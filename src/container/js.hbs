@@ -1,5 +1,5 @@
 <main>
-  <div>
+  <div class='ms-4'>
     <h1 class='text-center'>
       <strong> <u> {{name}} </u> </strong>
     </h1>
@@ -12,41 +12,50 @@
       {{/with}}
     </p>
 
-    <table>
-      <tr>
-        <td>
-          <p class='text-secondary'> <b> types: </b> </p>
-          <ul>
-            {{#each types}}
-              <li> {{this}} </li>
-            {{/each}}
-          </ul>
-          <br />
-        </td>
+    <div class='row'>
+      <table>
+        <tr>
+          <div class='col-4'>
+            <td class='pb-4'>
+              <p class='text-secondary ps-2'>
+                <b> types: </b>
+              </p>
+              <ul>
+                {{#each types}}
+                  <li> {{this}} </li>
+                {{/each}}
+              </ul>
+            </td>
+          </div>
 
-        <td>
-          <p class='text-secondary text-center'>
-            <b> libraries: </b>
-            <ul>
-              {{#each libraries}}
-                <li> {{this}} </li>
-              {{/each}}
-            </ul>
-          </p>
-        </td>
+          <div class='col-4'>
+            <td>
+              <p class='text-secondary'>
+                <b> libraries: </b>
+                <ul>
+                  {{#each libraries}}
+                    <li> {{this}} </li>
+                  {{/each}}
+                </ul>
+              </p>
+            </td>
+          </div>
 
-        <td>
-          <p class='text-secondary text-end'>
-            <b> tools: </b>
-          </p>
-          <ul>
-            {{#each tools}}
-              <li> {{this}} </li>
-            {{/each}}
-          </ul>
-        </td>
-      </tr>
-    </table>
+          <div class='col-4'>
+            <td>
+              <p class='text-secondary'>
+                <b> tools: </b>
+              </p>
+              <ul>
+                {{#each tools}}
+                  <li> {{this}} </li>
+                {{/each}}
+              </ul>
+            </td>
+          </div>
+        </tr>
+      </table>
+    </div>
 
     <p class='text-secondary'>
       <b> syntax: </b>
@@ -55,20 +64,22 @@
           <tr>
             <td>
               <ul>
-                <mark> <i> variables: </i> </mark>
+                <mark>
+                  <i> variables: </i>
+                </mark>
                 {{#each variables}}
                   <li> {{this}} </li>
-                {{/each}}</ul>
+                {{/each}}
+              </ul>
             </td>
 
-            <td>
+            <td class='pb-5'>
               <ul>
                 <mark> <i> functions: </i> </mark>
                 {{#each functions}}
                   <li> {{this}} </li>
-                {{/each}}</ul>
-              <br />
-              <br />
+                {{/each}}
+              </ul>
             </td>
 
             <td>
@@ -76,24 +87,26 @@
                 <mark> <i> conditionals: </i> </mark>
                 {{#each conditionals}}
                   <li> {{this}} </li>
-                {{/each}}</ul></td>
+                {{/each}}
+              </ul>
+            </td>
 
             <td>
               <ul>
                 <mark> <i> loops: </i> </mark>
                 {{#each loops}}
                   <li> {{this}} </li>
-                {{/each}}</ul></td>
+                {{/each}}
+              </ul>
+            </td>
 
-            <td>
+            <td class='pb-5'>
               <ul>
                 <mark> <i> classes: </i> </mark>
                 {{#each classes}}
                   <li> {{this}} </li>
                 {{/each}}
               </ul>
-              <br />
-              <br />
             </td>
           </tr>
         </table>
